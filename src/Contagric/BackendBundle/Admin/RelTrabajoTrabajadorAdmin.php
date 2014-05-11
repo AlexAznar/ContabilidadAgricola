@@ -11,9 +11,9 @@ use Sonata\AdminBundle\Route\RouteCollection;
 
 use Knp\Menu\ItemInterface as MenuItemInterface;
 
-use Contagric\BackendBundle\Entity\RelProductoCampanya;
+use Contagric\BackendBundle\Entity\RelTrabajoTrabajador;
 
-class RelProductoCampanyaAdmin extends Admin
+class RelTrabajoTrabajadorAdmin extends Admin
 {
     protected $parentAssociationMapping = 'campanya';
 
@@ -29,9 +29,11 @@ class RelProductoCampanyaAdmin extends Admin
     protected function configureShowField(ShowMapper $showMapper)
     {
         $showMapper
-            ->with('Gasto Producto')
-                ->add('producto')
+            ->with('Genero Producido')
+                ->add('trabajo')
+                ->add('trabajador')
                 ->add('campanya')
+                ->add('horas')
                 ->add('coste')
                 ->add('comentario')
                 ->add('fecha')
@@ -47,14 +49,16 @@ class RelProductoCampanyaAdmin extends Admin
     {
         if (!$this->isChild() && $this->configurationPool->getContainer()->get('request')->get('_route') != "sonata_admin_append_form_element")
         {
-            throw new \RuntimeException('El Gasto del producto necesita estar associado a una Campaña');
+            throw new \RuntimeException('El gasto de trabajo necesita estar associado a una Campaña');
         }
         else
         {
             $formMapper
-                ->with('Gasto Producto')
-                    ->add('producto', 'sonata_type_model_list')
-                    ->add('coste', 'money',  array('required' => true, 'precision' => '2'))
+                ->with('Genero Producido')
+                    ->add('trabajo', 'sonata_type_model_list')
+                    ->add('trabajador', 'sonata_type_model_list')
+                    ->add('horas','number', array('required' => true, 'precision' => '2'))
+                    ->add('coste', 'money', array('required' => true, 'precision' => '2'))
                     ->add('comentario', 'textarea', array('required' => false))
                     ->add('fecha', 'datetime', array('format' => 'Y-m-d'))
                 ->end()
@@ -70,7 +74,8 @@ class RelProductoCampanyaAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('producto')
+            ->addIdentifier('trabajo','trabajador')
+            ->add('horas')
             ->add('coste')
             ->add('comentario')
             ->add('fecha', 'datetime', array('format' => 'Y-m-d'))
@@ -91,7 +96,9 @@ class RelProductoCampanyaAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('producto.nombre', 'doctrine_orm_string', array())
+            ->add('trabajo.nombre', 'doctrine_orm_string', array())
+            ->add('trabajador.nombre', 'doctrine_orm_string', array())
+            ->add('horas')
             ->add('coste')
             ->add('comentario')
             ->add('fecha', 'doctrine_orm_datetime', array('label' => 'fecha'), null, array(

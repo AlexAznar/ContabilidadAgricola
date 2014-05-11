@@ -35,7 +35,7 @@ class RelGeneroCampanya
 
     /**
      *
-     * @ORM\Column(name="kilos", type="decimal", precision=2, scale=1)
+     * @ORM\Column(name="kilos", type="decimal", precision=7, scale=2)
      */
     protected $kilos;
 

@@ -35,7 +35,7 @@ class RelProductoCampanya
 
     /**
      *
-     * @ORM\Column(name="coste", type="decimal", precision=2, scale=1)
+     * @ORM\Column(name="coste", type="decimal", precision=7, scale=2)
      */
     protected $coste;
 

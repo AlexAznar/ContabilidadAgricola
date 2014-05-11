@@ -41,7 +41,13 @@ class RelTrabajoTrabajador
 
     /**
      *
-     * @ORM\Column(name="coste", type="decimal", precision=2, scale=1)
+     * @ORM\Column(name="horas", type="decimal", precision=7, scale=2)
+     */
+    protected $horas;
+
+    /**
+     *
+     * @ORM\Column(name="coste", type="decimal", precision=7, scale=2)
      */
     protected $coste;
 
@@ -142,6 +148,29 @@ class RelTrabajoTrabajador
     public function getCampanya()
     {
         return $this->campanya;
+    }
+
+    /**
+     * Set coste
+     *
+     * @param decimal $horas
+     * @return RelTrabajoTrabajador
+     */
+    public function setHoras($horas)
+    {
+        $this->horas = $horas;
+    
+        return $horas;
+    }
+
+    /**
+     * Get horas
+     *
+     * @return decimal 
+     */
+    public function getHoras()
+    {
+        return $this->horas;
     }
 
     /**

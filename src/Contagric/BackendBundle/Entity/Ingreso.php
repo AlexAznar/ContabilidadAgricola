@@ -28,7 +28,7 @@ class Ingreso
 
     /**
      *
-     * @ORM\Column(name="cantidad", type="decimal", precision=2, scale=1)
+     * @ORM\Column(name="cantidad", type="decimal", precision=7, scale=2)
      */
     protected $cantidad;
 

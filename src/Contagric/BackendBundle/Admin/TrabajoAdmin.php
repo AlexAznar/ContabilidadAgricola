@@ -11,47 +11,10 @@ use Sonata\AdminBundle\Route\RouteCollection;
 
 use Knp\Menu\ItemInterface as MenuItemInterface;
 
-use Contagric\BackendBundle\Entity\Campanya;
+use Contagric\BackendBundle\Entity\Trabajo;
 
-class CampanyaAdmin extends Admin
+class TrabajoAdmin extends Admin
 {
-    protected function configureSideMenu(MenuItemInterface $menu, $action, AdminInterface $childAdmin = null)
-    {
-        if (!$childAdmin && !in_array($action, array('edit')))
-        {
-            return;
-        }
-        
-        $admin = $this->isChild() ? $this->getParent() : $this;
-        
-        $id = $admin->getRequest()->get('id');
-        
-        $menu->addChild(
-            'Editar campaña',
-            array('uri' => $admin->generateUrl('edit', array('id' => $id)))
-        );
-        
-        $menu->addChild(
-            'Gastos Productos',
-            array('uri' => $admin->generateUrl('contagric.backend.admin.relproductocampanya.list', array('id' => $id)))
-        );
-
-        $menu->addChild(
-            'Gastos Trabajadores',
-            array('uri' => $admin->generateUrl('contagric.backend.admin.reltrabajotrabajador.list', array('id' => $id)))
-        );
-
-        $menu->addChild(
-            'Genero Producido',
-            array('uri' => $admin->generateUrl('contagric.backend.admin.relgenerocampanya.list', array('id' => $id)))
-        );
-
-        $menu->addChild(
-            'Ingresos',
-            array('uri' => $admin->generateUrl('contagric.backend.admin.ingreso.list', array('id' => $id)))
-        );
-    }
-
     /**
      * @param \Sonata\AdminBundle\Show\ShowMapper $showMapper
      *
@@ -60,14 +23,10 @@ class CampanyaAdmin extends Admin
     protected function configureShowField(ShowMapper $showMapper)
     {
         $showMapper
-            ->with('Campanya')
+            ->with('Trabajo')
                 ->add('id')
                 ->add('nombre')
-                ->add('comentario')
-                ->add('finca', 'entity', array(
-                    'class' => 'Contagric\BackendBundle\Entity\Finca',
-                    'label' => 'Finca'
-                ))
+                ->add('descripcion')
                 ->add('createdAt')
                 ->add('updatedAt')
             ->end();
@@ -81,13 +40,9 @@ class CampanyaAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->with('Campanya')
+            ->with('Trabajo')
                 ->add('nombre', 'text', array())
-                ->add('comentario', 'textarea', array("required" => false))
-                ->add('finca', 'entity', array(
-                    'class' => 'Contagric\BackendBundle\Entity\Finca',
-                    'label' => 'Finca'
-                ))
+                ->add('descripcion', 'textarea', array('required' => false))
             ->end();
     }
 
@@ -101,25 +56,13 @@ class CampanyaAdmin extends Admin
         $listMapper
             ->addIdentifier('id')
             ->add('nombre')
-            ->add('comentario')
-            ->add('finca.nombre', 'entity', array('label' => 'Finca'))
+            ->add('descripcion')
+            ->add('createdAt', 'datetime', array('format' => 'Y-m-d H:i:s'))
             ->add('updatedAt', 'datetime', array('format' => 'Y-m-d H:i:s'))
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'edit' => array(),
                     'delete' => array(),
-                    'gasto_productos' => array(
-                        'template' => 'BackendBundle:CampanyaAdmin:list__action_producto_list.html.twig'
-                    ),
-                    'gasto_trabajadores' => array(
-                        'template' => 'BackendBundle:CampanyaAdmin:list__action_trabajador_list.html.twig'
-                    ),
-                    'genero_producido' => array(
-                        'template' => 'BackendBundle:CampanyaAdmin:list__action_genero_list.html.twig'
-                    ),
-                    'ingreso' => array(
-                        'template' => 'BackendBundle:CampanyaAdmin:list__action_ingreso_list.html.twig'
-                    ),
                 )
             ))
         ;
@@ -134,8 +77,7 @@ class CampanyaAdmin extends Admin
     {
         $datagridMapper
             ->add('nombre')
-            ->add('comentario')
-            ->add('finca')
+            ->add('descripcion')
             ->add('createdAt', 'doctrine_orm_datetime', array('label' => 'Creado el'), null, array(
                 'widget' => 'single_text',
                 'required' => false,

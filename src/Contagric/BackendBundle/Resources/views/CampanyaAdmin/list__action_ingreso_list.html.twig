@@ -1,0 +1,8 @@
+{# Contagric/BackendBundle/Resources/views/CampanyaAdmin/list__action_ingreso_list.html.twig #}
+
+{% if admin.hasRoute('show') %}
+    <a href="{{ admin.generateObjectUrl('contagric.backend.admin.ingreso.list', object) }}" class="btn btn-default view_link btn-sm" title="Ingresos">
+        <i class="glyphicon glyphicon-zoom-in"></i>
+        Ingresos
+    </a>
+{% endif %}

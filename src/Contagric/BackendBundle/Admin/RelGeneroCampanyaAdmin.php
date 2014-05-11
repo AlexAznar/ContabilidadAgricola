@@ -54,7 +54,7 @@ class RelGeneroCampanyaAdmin extends Admin
             $formMapper
                 ->with('Genero Producido')
                     ->add('genero', 'sonata_type_model_list')
-                    ->add('kilos', 'number', array('required' => true, 'precision' => 2))
+                    ->add('kilos', 'number', array('required' => true, 'precision' => '2'))
                     ->add('comentario', 'textarea', array('required' => false))
                     ->add('fecha', 'datetime', array('format' => 'Y-m-d'))
                 ->end()
