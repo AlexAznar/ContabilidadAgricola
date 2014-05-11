@@ -62,6 +62,8 @@ class Producto
     public function __construct()
     {
         $this->gastoProducto = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->createdAt = new \DateTime("now");
+        $this->updatedAt = new \DateTime("now");
     }
 
 

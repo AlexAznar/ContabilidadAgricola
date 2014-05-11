@@ -62,6 +62,8 @@ class Trabajo
     public function __construct()
     {
         $this->gastoTrabajo = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->createdAt = new \DateTime("now");
+        $this->updatedAt = new \DateTime("now");
     }
 
 

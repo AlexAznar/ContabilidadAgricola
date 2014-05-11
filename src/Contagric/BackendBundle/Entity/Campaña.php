@@ -46,6 +46,20 @@ class Campaña
     protected $ingreso;
 
     /**
+     * @var datetime
+     *
+     * @ORM\Column(name="created_at", type="datetime")
+     */
+    protected $createdAt;
+    
+    /**
+     * @var datetime
+     *
+     * @ORM\Column(name="updated_at", type="datetime", nullable=true)
+     */
+    protected $updatedAt;
+
+    /**
      * @ORM\OneToMany(targetEntity="RelProductoCampaña", mappedBy="campaña", cascade={"persist"}, orphanRemoval=true)
      */
     protected $gastoProducto;
@@ -71,6 +85,8 @@ class Campaña
         $this->gastoProducto = new \Doctrine\Common\Collections\ArrayCollection();
         $this->gastoTrabajo = new \Doctrine\Common\Collections\ArrayCollection();
         $this->generoProducido = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->createdAt = new \DateTime("now");
+        $this->updatedAt = new \DateTime("now");
     }
 
     /**
@@ -176,6 +192,52 @@ class Campaña
     public function getIngreso()
     {
         return $this->ingreso;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     * @return Campaña
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+    
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime 
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     * @return Campaña
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+    
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime 
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
     }
 
 

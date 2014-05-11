@@ -61,6 +61,8 @@ class Trabajador
     public function __construct()
     {
         $this->trabajoRealizado = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->createdAt = new \DateTime("now");
+        $this->updatedAt = new \DateTime("now");
     }
 
     /**

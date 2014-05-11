@@ -62,6 +62,8 @@ class Genero
     public function __construct()
     {
         $this->generoProducido = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->createdAt = new \DateTime("now");
+        $this->updatedAt = new \DateTime("now");
     }
 
     /**
