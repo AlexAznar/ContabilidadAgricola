@@ -1,0 +1,72 @@
+services:
+    contagric.backend.admin.campanya:
+        class: Contagric\BackendBundle\Admin\CampanyaAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Contabilidad Agricola", label: "Campañas" }
+        arguments: [null, Contagric\BackendBundle\Entity\Campanya, BackendBundle:CampanyaAdmin]
+        calls:
+            - [ addChild, [@contagric.backend.admin.relProductoCampanya]]
+            - [ addChild, [@contagric.backend.admin.relGeneroCampanya]]
+            - [ addChild, [@contagric.backend.admin.ingreso]]
+            - [ addChild, [@contagric.backend.admin.relTrabajoTrabajador]]
+
+    contagric.backend.admin.finca:
+        class: Contagric\BackendBundle\Admin\FincaAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Inventario Agricola", label: "Fincas" }
+        arguments: [null, Contagric\BackendBundle\Entity\Finca, BackendBundle:FincaAdmin]
+
+    contagric.backend.admin.trabajo:
+        class: Contagric\BackendBundle\Admin\TrabajoAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Inventario Agricola", label: "Trabajos" }
+        arguments: [null, Contagric\BackendBundle\Entity\Trabajo, BackendBundle:TrabajoAdmin]
+
+    contagric.backend.admin.trabajador:
+        class: Contagric\BackendBundle\Admin\TrabajadorAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Agenda", label: "Trabajadores" }
+        arguments: [null, Contagric\BackendBundle\Entity\Trabajador, BackendBundle:TrabajadorAdmin]
+
+    contagric.backend.admin.genero:
+        class: Contagric\BackendBundle\Admin\GeneroAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Inventario Agricola", label: "Generos" }
+        arguments: [null, Contagric\BackendBundle\Entity\Genero, BackendBundle:GeneroAdmin]
+
+    contagric.backend.admin.producto:
+        class: Contagric\BackendBundle\Admin\ProductoAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Inventario Agricola", label: "Productos" }
+        arguments: [null, Contagric\BackendBundle\Entity\Producto, BackendBundle:ProductoAdmin]
+
+    contagric.backend.admin.ingreso:
+        class: Contagric\BackendBundle\Admin\IngresoAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Contabilidad Agricola", label: "Ingresos", show_in_dashboard: false }
+        arguments: [null, Contagric\BackendBundle\Entity\Ingreso, BackendBundle:IngresoAdmin]
+
+
+    contagric.backend.admin.relProductoCampanya:
+        class: Contagric\BackendBundle\Admin\RelProductoCampanyaAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Contabilidad Agricola", label: "Gasto en productos", show_in_dashboard: false }
+        arguments: [null, Contagric\BackendBundle\Entity\RelProductoCampanya, null]
+        calls:
+            - [ setLabelTranslatorStrategy, [ @sonata.admin.label.strategy.underscore ] ]
+
+    contagric.backend.admin.relGeneroCampanya:
+        class: Contagric\BackendBundle\Admin\RelGeneroCampanyaAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Contabilidad Agricola", label: "Genero Producido", show_in_dashboard: false }
+        arguments: [null, Contagric\BackendBundle\Entity\RelGeneroCampanya, null]
+        calls:
+            - [ setLabelTranslatorStrategy, [ @sonata.admin.label.strategy.underscore ] ]
+
+    contagric.backend.admin.relTrabajoTrabajador:
+        class: Contagric\BackendBundle\Admin\RelTrabajoTrabajadorAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Contabilidad Agricola", label: "Gasto Trabajador", show_in_dashboard: true }
+        arguments: [null, Contagric\BackendBundle\Entity\RelTrabajoTrabajador, null]
+        calls:
+            - [ setLabelTranslatorStrategy, [ @sonata.admin.label.strategy.underscore ] ]

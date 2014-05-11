@@ -6,13 +6,13 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints as DoctrineAssert;
 
 /**
- * RelProductoCampaña
+ * RelProductoCampanya
  *
- * @ORM\Entity(repositoryClass="Contagric\BackendBundle\Entity\RelProductoCampañaRepository")
- * @ORM\Table(name="rel_producto_campaña", uniqueConstraints={@ORM\UniqueConstraint(name="unique_campaña_producto", columns={"campaña_id", "producto_id", "fecha"})})
- * @DoctrineAssert\UniqueEntity(fields={"campaña", "producto","fecha"}, message="Este producto ya existe en esta campaña para la misma fecha.")
+ * @ORM\Entity(repositoryClass="Contagric\BackendBundle\Entity\RelProductoCampanyaRepository")
+ * @ORM\Table(name="rel_producto_campanya", uniqueConstraints={@ORM\UniqueConstraint(name="unique_campana_producto", columns={"campanya_id", "producto_id", "fecha"})})
+ * @DoctrineAssert\UniqueEntity(fields={"campanya", "producto","fecha"}, message="Este producto ya existe en esta campanya para la misma fecha.")
  */
-class RelProductoCampaña
+class RelProductoCampanya
 {
     /**
      * @ORM\Id
@@ -28,14 +28,14 @@ class RelProductoCampaña
     protected $producto;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Campaña", inversedBy="gastoProducto")
-     * @ORM\JoinColumn(name="campaña_id", referencedColumnName="id", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Campanya", inversedBy="gastoProducto")
+     * @ORM\JoinColumn(name="campanya_id", referencedColumnName="id", nullable=false)
      */
-    protected $campaña;
+    protected $campanya;
 
     /**
      *
-     * @ORM\Column(name="coste", type="decimal", precision=2, scale=1)
+     * @ORM\Column(name="coste", type="decimal", precision=7, scale=2)
      */
     protected $coste;
 
@@ -73,7 +73,7 @@ class RelProductoCampaña
      * Set producto
      *
      * @param \Contagric\BackendBundle\Entity\Producto $producto
-     * @return RelProductoCampaña
+     * @return RelProductoCampanya
      */
     public function setProducto(\Contagric\BackendBundle\Entity\Producto  $producto)
     {
@@ -93,33 +93,33 @@ class RelProductoCampaña
     }
 
     /**
-     * Set campaña
+     * Set campanya
      *
-     * @param \Contagric\BackendBundle\Entity\Campaña $campaña
-     * @return RelProductoCampaña
+     * @param \Contagric\BackendBundle\Entity\Campanya $campanya
+     * @return RelProductoCampanya
      */
-    public function setCampaña(\Contagric\BackendBundle\Entity\Campaña $campaña)
+    public function setCampanya(\Contagric\BackendBundle\Entity\Campanya $campanya)
     {
-        $this->campaña = $campaña;
+        $this->campanya = $campanya;
     
         return $this;
     }
 
     /**
-     * Get campaña
+     * Get campanya
      *
-     * @return \Contagric\BackendBundle\Entity\Campaña
+     * @return \Contagric\BackendBundle\Entity\Campanya
      */
-    public function getCampaña()
+    public function getCampanya()
     {
-        return $this->campaña;
+        return $this->campanya;
     }
 
     /**
      * Set coste
      *
      * @param decimal $coste
-     * @return RelProductoCampaña
+     * @return RelProductoCampanya
      */
     public function setCoste($coste)
     {
@@ -142,7 +142,7 @@ class RelProductoCampaña
      * Set comentario
      *
      * @param string $comentario
-     * @return RelProductoCampaña
+     * @return RelProductoCampanya
      */
     public function setComentario($comentario)
     {
@@ -165,7 +165,7 @@ class RelProductoCampaña
      * Set fecha
      *
      * @param datetime $fecha
-     * @return RelProductoCampaña
+     * @return RelProductoCampanya
      */
     public function setFecha($fecha)
     {

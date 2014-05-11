@@ -35,7 +35,7 @@ class Genero
     protected $clase;
 
       /**
-     * @ORM\OneToMany(targetEntity="RelGeneroCampaña", mappedBy="producto")
+     * @ORM\OneToMany(targetEntity="RelGeneroCampanya", mappedBy="producto")
      */
     protected $generoProducido;
 
@@ -62,6 +62,8 @@ class Genero
     public function __construct()
     {
         $this->generoProducido = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->createdAt = new \DateTime("now");
+        $this->updatedAt = new \DateTime("now");
     }
 
     /**
@@ -180,12 +182,12 @@ class Genero
     /**
      * Add generoProducido
      *
-     * @param \Contagric\BackendBundle\Entity\RelGeneroCampaña $generoProducido
+     * @param \Contagric\BackendBundle\Entity\RelGeneroCampanya $generoProducido
      * @return Genero
      */
-    public function addGeneroProducido(\Contagric\BackendBundle\Entity\RelGeneroCampaña $generoProducido)
+    public function addGeneroProducido(\Contagric\BackendBundle\Entity\RelGeneroCampanya $generoProducido)
     {
-        $generoProducido->setCampaña($this);
+        $generoProducido->setCampanya($this);
         $this->generoProducido->add($generoProducido);
         
         return $this;
@@ -194,9 +196,9 @@ class Genero
     /**
      * Remove generoProducido
      *
-     * @param \Contagric\BackendBundle\Entity\RelGeneroCampaña $generoProducido
+     * @param \Contagric\BackendBundle\Entity\RelGeneroCampanya $generoProducido
      */
-    public function removeGeneroProducido(\Contagric\BackendBundle\Entity\RelGeneroCampaña $generoProducido)
+    public function removeGeneroProducido(\Contagric\BackendBundle\Entity\RelGeneroCampanya $generoProducido)
     {
         $this->generoProducido->removeElement($generoProducido);
     }

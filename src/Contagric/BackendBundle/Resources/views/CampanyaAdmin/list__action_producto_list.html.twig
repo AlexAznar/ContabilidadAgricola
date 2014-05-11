@@ -1,0 +1,8 @@
+{# Contagric/BackendBundle/Resources/views/CampanyaAdmin/list__action_producto_list.html.twig #}
+
+{% if admin.hasRoute('show') %}
+    <a href="{{ admin.generateObjectUrl('contagric.backend.admin.relproductocampanya.list', object) }}" class="btn btn-default view_link btn-sm" title="Gasto Productos">
+        <i class="glyphicon glyphicon-zoom-in"></i>
+        Gasto Productos
+    </a>
+{% endif %}

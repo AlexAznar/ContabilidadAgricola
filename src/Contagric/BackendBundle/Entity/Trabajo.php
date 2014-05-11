@@ -62,6 +62,8 @@ class Trabajo
     public function __construct()
     {
         $this->gastoTrabajo = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->createdAt = new \DateTime("now");
+        $this->updatedAt = new \DateTime("now");
     }
 
 
@@ -186,7 +188,7 @@ class Trabajo
      */
     public function addGastoTrabajo(\Contagric\BackendBundle\Entity\RelTrabajoTrabajador $gastoTrabajo)
     {
-        $gastoTrabajo->setCampaña($this);
+        $gastoTrabajo->setCampanya($this);
         $this->gastoTrabajo->add($gastoTrabajo);
         
         return $this;

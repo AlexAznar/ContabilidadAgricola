@@ -48,6 +48,11 @@ class Finca
      */
     protected $updatedAt;
 
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime("now");
+        $this->updatedAt = new \DateTime("now");
+    }
 
     public function __toString()
     {

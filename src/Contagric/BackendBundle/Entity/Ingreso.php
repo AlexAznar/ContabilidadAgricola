@@ -21,14 +21,14 @@ class Ingreso
     protected $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Campaña", inversedBy="ingreso")
-     * @ORM\JoinColumn(name="campaña_id", referencedColumnName="id", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Campanya", inversedBy="ingreso")
+     * @ORM\JoinColumn(name="campanya_id", referencedColumnName="id", nullable=false)
      */
-    protected $campaña;
+    protected $campanya;
 
     /**
      *
-     * @ORM\Column(name="cantidad", type="decimal", precision=2, scale=1)
+     * @ORM\Column(name="cantidad", type="decimal", precision=7, scale=2)
      */
     protected $cantidad;
 
@@ -63,26 +63,26 @@ class Ingreso
     }
 
     /**
-     * Set campaña
+     * Set campanya
      *
-     * @param \Contagric\BackendBundle\Entity\Campaña $campaña
+     * @param \Contagric\BackendBundle\Entity\Campanya $campanya
      * @return Ingreso
      */
-    public function setCampaña(\Contagric\BackendBundle\Entity\Campaña $campaña)
+    public function setCampanya(\Contagric\BackendBundle\Entity\Campanya $campanya)
     {
-        $this->campaña = $campaña;
+        $this->campanya = $campanya;
     
         return $this;
     }
 
     /**
-     * Get campaña
+     * Get campanya
      *
-     * @return \Contagric\BackendBundle\Entity\Campaña $campaña
+     * @return \Contagric\BackendBundle\Entity\Campanya $campanya
      */
-    public function getCampaña()
+    public function getCampanya()
     {
-        return $this->campaña;
+        return $this->campanya;
     }
 
     /**

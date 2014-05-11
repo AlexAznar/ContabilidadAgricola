@@ -35,6 +35,20 @@ class Trabajador
     protected $descripcion;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="telefono", type="text")
+     */
+    protected $telefono;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="direccion", type="text", nullable = true)
+     */
+    protected $direccion;
+
+    /**
      * @ORM\OneToMany(targetEntity="RelTrabajoTrabajador", mappedBy="trabajador",cascade={"persist"}, orphanRemoval=true)
      */
     protected $trabajoRealizado;
@@ -61,6 +75,8 @@ class Trabajador
     public function __construct()
     {
         $this->trabajoRealizado = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->createdAt = new \DateTime("now");
+        $this->updatedAt = new \DateTime("now");
     }
 
     /**
@@ -95,6 +111,53 @@ class Trabajador
     {
         return $this->nombre;
     }
+
+    /**
+     * Set telefono
+     *
+     * @param string $telefono
+     * @return Trabajador
+     */
+    public function setTelefono($telefono)
+    {
+        $this->telefono = $telefono;
+    
+        return $this;
+    }
+
+    /**
+     * Get telefono
+     *
+     * @return string 
+     */
+    public function getTelefono()
+    {
+        return $this->telefono;
+    }
+
+    /**
+     * Set direccion
+     *
+     * @param string $direccion
+     * @return Trabajador
+     */
+    public function setDireccion($direccion)
+    {
+        $this->direccion = $direccion;
+    
+        return $this;
+    }
+
+    /**
+     * Get direccion
+     *
+     * @return string 
+     */
+    public function getDireccion()
+    {
+        return $this->direccion;
+    }
+
 
     /**
      * Set descripcion
@@ -184,7 +247,7 @@ class Trabajador
      */
     public function addTrabajoRealizado(\Contagric\BackendBundle\Entity\RelTrabajoTrabajador $trabajoRealizado)
     {
-        $trabajoRealizado->setCampaña($this);
+        $trabajoRealizado->setCampanya($this);
         $this->trabajoRealizado->add($trabajoRealizado);
         
         return $this;
