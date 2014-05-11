@@ -9,7 +9,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints as DoctrineAssert;
  * RelGeneroCampaña
  *
  * @ORM\Entity(repositoryClass="Contagric\BackendBundle\Entity\RelGeneroCampañaRepository")
- * @ORM\Table(name="rel_genero_campaña", uniqueConstraints={@ORM\UniqueConstraint(name="unique_campaña_genero", columns={"campaña_id", "genero_id", "fecha"})})
+ * @ORM\Table(name="rel_genero_campaña", uniqueConstraints={@ORM\UniqueConstraint(name="unique_campana_genero", columns={"campaña_id", "genero_id", "fecha"})})
  * @DoctrineAssert\UniqueEntity(fields={"campaña", "genero","fecha"}, message="Este genero ya existe en esta campaña para la misma fecha.")
  */
 class RelGeneroCampaña
