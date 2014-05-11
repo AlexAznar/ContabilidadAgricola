@@ -186,7 +186,7 @@ class Trabajador
      */
     public function addTrabajoRealizado(\Contagric\BackendBundle\Entity\RelTrabajoTrabajador $trabajoRealizado)
     {
-        $trabajoRealizado->setCampaña($this);
+        $trabajoRealizado->setCampanya($this);
         $this->trabajoRealizado->add($trabajoRealizado);
         
         return $this;

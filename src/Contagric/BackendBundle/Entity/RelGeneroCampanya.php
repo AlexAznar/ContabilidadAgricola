@@ -6,13 +6,13 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints as DoctrineAssert;
 
 /**
- * RelGeneroCampaña
+ * RelGeneroCampanya
  *
- * @ORM\Entity(repositoryClass="Contagric\BackendBundle\Entity\RelGeneroCampañaRepository")
- * @ORM\Table(name="rel_genero_campaña", uniqueConstraints={@ORM\UniqueConstraint(name="unique_campana_genero", columns={"campaña_id", "genero_id", "fecha"})})
- * @DoctrineAssert\UniqueEntity(fields={"campaña", "genero","fecha"}, message="Este genero ya existe en esta campaña para la misma fecha.")
+ * @ORM\Entity(repositoryClass="Contagric\BackendBundle\Entity\RelGeneroCampanyaRepository")
+ * @ORM\Table(name="rel_genero_campanya", uniqueConstraints={@ORM\UniqueConstraint(name="unique_campana_genero", columns={"campanya_id", "genero_id", "fecha"})})
+ * @DoctrineAssert\UniqueEntity(fields={"campanya", "genero","fecha"}, message="Este genero ya existe en esta campanya para la misma fecha.")
  */
-class RelGeneroCampaña
+class RelGeneroCampanya
 {
     /**
      * @ORM\Id
@@ -28,10 +28,10 @@ class RelGeneroCampaña
     protected $genero;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Campaña", inversedBy="gastoGenero")
-     * @ORM\JoinColumn(name="campaña_id", referencedColumnName="id", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Campanya", inversedBy="gastoGenero")
+     * @ORM\JoinColumn(name="campanya_id", referencedColumnName="id", nullable=false)
      */
-    protected $campaña;
+    protected $campanya;
 
     /**
      *
@@ -73,7 +73,7 @@ class RelGeneroCampaña
      * Set genero
      *
      * @param \Contagric\BackendBundle\Entity\Genero $genero
-     * @return RelGeneroCampaña
+     * @return RelGeneroCampanya
      */
     public function setGenero(\Contagric\BackendBundle\Entity\Genero  $genero)
     {
@@ -93,33 +93,33 @@ class RelGeneroCampaña
     }
 
     /**
-     * Set campaña
+     * Set campanya
      *
-     * @param \Contagric\BackendBundle\Entity\Campaña $campaña
-     * @return RelGeneroCampaña
+     * @param \Contagric\BackendBundle\Entity\Campanya $campanya
+     * @return RelGeneroCampanya
      */
-    public function setCampaña(\Contagric\BackendBundle\Entity\Campaña $campaña)
+    public function setCampanya(\Contagric\BackendBundle\Entity\Campanya $campanya)
     {
-        $this->campaña = $campaña;
+        $this->campanya = $campanya;
     
         return $this;
     }
 
     /**
-     * Get campaña
+     * Get campanya
      *
-     * @return \Contagric\BackendBundle\Entity\Campaña
+     * @return \Contagric\BackendBundle\Entity\Campanya
      */
-    public function getCampaña()
+    public function getCampanya()
     {
-        return $this->campaña;
+        return $this->campanya;
     }
 
     /**
      * Set kilos
      *
      * @param decimal $kilos
-     * @return RelGeneroCampaña
+     * @return RelGeneroCampanya
      */
     public function setKilos($kilos)
     {
@@ -142,7 +142,7 @@ class RelGeneroCampaña
      * Set comentario
      *
      * @param string $comentario
-     * @return RelGeneroCampaña
+     * @return RelGeneroCampanya
      */
     public function setComentario($comentario)
     {
@@ -165,7 +165,7 @@ class RelGeneroCampaña
      * Set fecha
      *
      * @param datetime $fecha
-     * @return RelGeneroCampaña
+     * @return RelGeneroCampanya
      */
     public function setFecha($fecha)
     {

@@ -4,12 +4,12 @@ namespace Contagric\BackendBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Campaña
+ * Campanya
  *
- * @ORM\Entity(repositoryClass="Contagric\BackendBundle\Entity\CampañaRepository")
- * @ORM\Table(name="campaña")
+ * @ORM\Entity(repositoryClass="Contagric\BackendBundle\Entity\CampanyaRepository")
+ * @ORM\Table(name="campanya")
  */
-class Campaña
+class Campanya
 {
     /**
      * @var integer
@@ -41,7 +41,7 @@ class Campaña
     protected $finca;
 
     /**
-     * @ORM\OneToMany(targetEntity="Ingreso", mappedBy="campaña", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="Ingreso", mappedBy="campanya", cascade={"persist"}, orphanRemoval=true)
      */
     protected $ingreso;
 
@@ -60,17 +60,17 @@ class Campaña
     protected $updatedAt;
 
     /**
-     * @ORM\OneToMany(targetEntity="RelProductoCampaña", mappedBy="campaña", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="RelProductoCampanya", mappedBy="campanya", cascade={"persist"}, orphanRemoval=true)
      */
     protected $gastoProducto;
 
     /**
-     * @ORM\OneToMany(targetEntity="RelTrabajoTrabajador", mappedBy="campaña", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="RelTrabajoTrabajador", mappedBy="campanya", cascade={"persist"}, orphanRemoval=true)
      */
     protected $gastoTrabajo;
 
     /**
-     * @ORM\OneToMany(targetEntity="RelGeneroCampaña", mappedBy="campaña", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="RelGeneroCampanya", mappedBy="campanya", cascade={"persist"}, orphanRemoval=true)
      */
     protected $generoProducido;
 
@@ -103,7 +103,7 @@ class Campaña
      * Set nombre
      *
      * @param string $nombre
-     * @return Campaña
+     * @return Campanya
      */
     public function setNombre($nombre)
     {
@@ -126,7 +126,7 @@ class Campaña
      * Set comentario
      *
      * @param string $comentario
-     * @return Campaña
+     * @return Campanya
      */
     public function setComentario($comentario)
     {
@@ -149,7 +149,7 @@ class Campaña
      * Set finca
      *
      * @param \Contagric\BackendBundle\Entity\Finca 
-     * @return Campaña
+     * @return Campanya
      */
     public function setFinca(\Contagric\BackendBundle\Entity\Finca $finca)
     {
@@ -198,7 +198,7 @@ class Campaña
      * Set createdAt
      *
      * @param \DateTime $createdAt
-     * @return Campaña
+     * @return Campanya
      */
     public function setCreatedAt($createdAt)
     {
@@ -221,7 +221,7 @@ class Campaña
      * Set updatedAt
      *
      * @param \DateTime $updatedAt
-     * @return Campaña
+     * @return Campanya
      */
     public function setUpdatedAt($updatedAt)
     {
@@ -322,12 +322,12 @@ class Campaña
     /**
      * Add gastoProducto
      *
-     * @param \Contagric\BackendBundle\Entity\RelProductoCampaña $gastoProducto
-     * @return Campaña
+     * @param \Contagric\BackendBundle\Entity\RelProductoCampanya $gastoProducto
+     * @return Campanya
      */
-    public function addGastoProducto(\Contagric\BackendBundle\Entity\RelProductoCampaña $gastoProducto)
+    public function addGastoProducto(\Contagric\BackendBundle\Entity\RelProductoCampanya $gastoProducto)
     {
-        $gastoProducto->setCampaña($this);
+        $gastoProducto->setCampanya($this);
         $this->gastoProducto->add($gastoProducto);
         
         return $this;
@@ -336,9 +336,9 @@ class Campaña
     /**
      * Remove gastoProducto
      *
-     * @param \Contagric\BackendBundle\Entity\RelProductoCampaña $gastoProducto
+     * @param \Contagric\BackendBundle\Entity\RelProductoCampanya $gastoProducto
      */
-    public function removeGastoProducto(\Contagric\BackendBundle\Entity\RelProductoCampaña $gastoProducto)
+    public function removeGastoProducto(\Contagric\BackendBundle\Entity\RelProductoCampanya $gastoProducto)
     {
         $this->gastoProducto->removeElement($gastoProducto);
     }
@@ -346,12 +346,12 @@ class Campaña
     /**
      * Add gastoTrabajo
      *
-     * @param \Contagric\BackendBundle\Entity\RelProductoCampaña $gastoTrabajo
-     * @return Campaña
+     * @param \Contagric\BackendBundle\Entity\RelProductoCampanya $gastoTrabajo
+     * @return Campanya
      */
-    public function addGastoTrabajo(\Contagric\BackendBundle\Entity\RelProductoCampaña $gastoTrabajo)
+    public function addGastoTrabajo(\Contagric\BackendBundle\Entity\RelProductoCampanya $gastoTrabajo)
     {
-        $gastoTrabajo->setCampaña($this);
+        $gastoTrabajo->setCampanya($this);
         $this->gastoTrabajo->add($gastoTrabajo);
         
         return $this;
@@ -370,12 +370,12 @@ class Campaña
     /**
      * Add generoProducido
      *
-     * @param \Contagric\BackendBundle\Entity\RelGeneroCampaña $generoProducido
-     * @return Campaña
+     * @param \Contagric\BackendBundle\Entity\RelGeneroCampanya $generoProducido
+     * @return Campanya
      */
-    public function addGeneroProducido(\Contagric\BackendBundle\Entity\RelGeneroCampaña $generoProducido)
+    public function addGeneroProducido(\Contagric\BackendBundle\Entity\RelGeneroCampanya $generoProducido)
     {
-        $generoProducido->setCampaña($this);
+        $generoProducido->setCampanya($this);
         $this->generoProducido->add($generoProducido);
         
         return $this;
@@ -384,9 +384,9 @@ class Campaña
     /**
      * Remove generoProducido
      *
-     * @param \Contagric\BackendBundle\Entity\RelGeneroCampaña $generoProducido
+     * @param \Contagric\BackendBundle\Entity\RelGeneroCampanya $generoProducido
      */
-    public function removeGeneroProducido(\Contagric\BackendBundle\Entity\RelGeneroCampaña $generoProducido)
+    public function removeGeneroProducido(\Contagric\BackendBundle\Entity\RelGeneroCampanya $generoProducido)
     {
         $this->generoProducido->removeElement($generoProducido);
     }
@@ -395,11 +395,11 @@ class Campaña
      * Add ingreso
      *
      * @param \Contagric\BackendBundle\Entity\Ingreso $ingreso
-     * @return Campaña
+     * @return Campanya
      */
     public function addIngreso(\Contagric\BackendBundle\Entity\Ingreso $ingreso)
     {
-        $ingreso->setCampaña($this);
+        $ingreso->setCampanya($this);
         $this->ingreso->add($ingreso);
         
         return $this;

@@ -35,7 +35,7 @@ class Producto
     protected $descripcion;
 
       /**
-     * @ORM\OneToMany(targetEntity="RelProductoCampaña", mappedBy="producto")
+     * @ORM\OneToMany(targetEntity="RelProductoCampanya", mappedBy="producto")
      */
     protected $gastoProducto;
 
@@ -183,12 +183,12 @@ class Producto
     /**
      * Add gastoProducto
      *
-     * @param \Contagric\BackendBundle\Entity\RelProductoCampaña $gastoProducto
+     * @param \Contagric\BackendBundle\Entity\RelProductoCampanya $gastoProducto
      * @return Producto
      */
-    public function addGastoProducto(\Contagric\BackendBundle\Entity\RelProductoCampaña $gastoProducto)
+    public function addGastoProducto(\Contagric\BackendBundle\Entity\RelProductoCampanya $gastoProducto)
     {
-        $gastoProducto->setCampaña($this);
+        $gastoProducto->setCampanya($this);
         $this->gastoProducto->add($gastoProducto);
         
         return $this;
@@ -197,9 +197,9 @@ class Producto
     /**
      * Remove gastoProducto
      *
-     * @param \Contagric\BackendBundle\Entity\RelProductoCampaña $gastoProducto
+     * @param \Contagric\BackendBundle\Entity\RelProductoCampanya $gastoProducto
      */
-    public function removeGastoProducto(\Contagric\BackendBundle\Entity\RelProductoCampaña $gastoProducto)
+    public function removeGastoProducto(\Contagric\BackendBundle\Entity\RelProductoCampanya $gastoProducto)
     {
         $this->gastoProducto->removeElement($gastoProducto);
     }

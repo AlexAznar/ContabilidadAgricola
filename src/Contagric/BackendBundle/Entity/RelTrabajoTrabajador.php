@@ -9,8 +9,8 @@ use Symfony\Bridge\Doctrine\Validator\Constraints as DoctrineAssert;
  * RelTrabajoTrabajador
  *
  * @ORM\Entity(repositoryClass="Contagric\BackendBundle\Entity\RelTrabajoTrabajadorRepository")
- * @ORM\Table(name="rel_trabajo_trabajador", uniqueConstraints={@ORM\UniqueConstraint(name="unique_campana_trabajo_trabajador", columns={"campaña_id", "trabajo_id", "trabajador_id", "fecha"})})
- * @DoctrineAssert\UniqueEntity(fields={"campaña", "trabajo", "trabajador", "fecha"}, message="Este trabajo ya existe para este trabajador en esta campaña para la misma fecha.")
+ * @ORM\Table(name="rel_trabajo_trabajador", uniqueConstraints={@ORM\UniqueConstraint(name="unique_campana_trabajo_trabajador", columns={"campanya_id", "trabajo_id", "trabajador_id", "fecha"})})
+ * @DoctrineAssert\UniqueEntity(fields={"campanya", "trabajo", "trabajador", "fecha"}, message="Este trabajo ya existe para este trabajador en esta campanya para la misma fecha.")
  */
 class RelTrabajoTrabajador
 {
@@ -34,10 +34,10 @@ class RelTrabajoTrabajador
     protected $trabajador;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Campaña", inversedBy="gastoTrabajo")
-     * @ORM\JoinColumn(name="campaña_id", referencedColumnName="id", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Campanya", inversedBy="gastoTrabajo")
+     * @ORM\JoinColumn(name="campanya_id", referencedColumnName="id", nullable=false)
      */
-    protected $campaña;
+    protected $campanya;
 
     /**
      *
@@ -122,26 +122,26 @@ class RelTrabajoTrabajador
     }
 
     /**
-     * Set campaña
+     * Set campanya
      *
-     * @param \Contagric\BackendBundle\Entity\Campaña $campaña
+     * @param \Contagric\BackendBundle\Entity\Campanya $campanya
      * @return RelTrabajoTrabajador
      */
-    public function setCampaña(\Contagric\BackendBundle\Entity\Campaña $campaña)
+    public function setCampanya(\Contagric\BackendBundle\Entity\Campanya $campanya)
     {
-        $this->campaña = $campaña;
+        $this->campanya = $campanya;
     
         return $this;
     }
 
     /**
-     * Get campaña
+     * Get campanya
      *
-     * @return \Contagric\BackendBundle\Entity\Campaña
+     * @return \Contagric\BackendBundle\Entity\Campanya
      */
-    public function getCampaña()
+    public function getCampanya()
     {
-        return $this->campaña;
+        return $this->campanya;
     }
 
     /**

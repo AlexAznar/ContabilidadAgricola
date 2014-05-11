@@ -188,7 +188,7 @@ class Trabajo
      */
     public function addGastoTrabajo(\Contagric\BackendBundle\Entity\RelTrabajoTrabajador $gastoTrabajo)
     {
-        $gastoTrabajo->setCampaña($this);
+        $gastoTrabajo->setCampanya($this);
         $this->gastoTrabajo->add($gastoTrabajo);
         
         return $this;
