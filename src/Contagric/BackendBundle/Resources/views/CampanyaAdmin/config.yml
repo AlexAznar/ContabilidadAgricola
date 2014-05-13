@@ -85,15 +85,16 @@ sonata_block:
         sonata.admin.block.admin_list:
             contexts:  [admin]
         sonata.block.service.text: ~
-        sonata.block.service.action:
-        sonata.block.service.rss:
+        sonata.block.service.action: ~
+        sonata.block.service.rss: ~
+        sonata.block.service.stats:
          
 sonata_admin:
     title:     Contagric Panel
     title_logo: /bundles/sonataadmin/logo_title.png
     templates:
        # default global templates
-        layout: BackendBundle::standard_layout.html.twig
+        layout: SonataAdminBundle::standard_layout.html.twig
         ajax:   SonataAdminBundle::ajax_layout.html.twig
 
         # default actions templates, should extend a global templates
@@ -120,10 +121,11 @@ sonata_admin:
         pager_links: SonataAdminBundle:Pager:links.html.twig
         pager_results: SonataAdminBundle:Pager:results.html.twig
 
-        dashboard: BackendBundle:Default:dashboard.html.twig
+        dashboard: BackendBundle::dashboard.html.twig
 
     dashboard:
         blocks:
             - { position: left, type: sonata.admin.block.admin_list }
+            - { position: right, type: sonata.block.service.stats }
 
 

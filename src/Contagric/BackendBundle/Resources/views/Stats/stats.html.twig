@@ -1,0 +1,16 @@
+{% extends 'SonataAdminBundle::standard_layout.html.twig' %}
+
+{% block title %}{{ 'title_dashboard'|trans({}, 'SonataAdminBundle') }}{% endblock%}
+{% block sonata_breadcrumb %}
+    <ol class="nav navbar-top-links breadcrumb">
+        <li>
+                <a href="/app_dev.php/admin/dashboard">Dashboard</a>
+        </li>
+        <li class="active"><span>Stats</span></li>
+    </ol>
+{% endblock sonata_breadcrumb %}
+{% block content %}
+        <h1>Stats</h1>
+        <center><img src="http://blog.fusioncharts.com/wp-content/uploads/2013/08/Google-Analytics-spark-line1.jpg"/> </center>
+{% endblock %}
+
