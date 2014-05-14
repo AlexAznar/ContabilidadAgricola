@@ -93,7 +93,7 @@ sonata_admin:
     title_logo: /bundles/sonataadmin/logo_title.png
     templates:
        # default global templates
-        layout: SonataAdminBundle::standard_layout.html.twig
+        layout: BackendBundle::standard_layout.html.twig
         ajax:   SonataAdminBundle::ajax_layout.html.twig
 
         # default actions templates, should extend a global templates
@@ -119,6 +119,8 @@ sonata_admin:
         # default values of pager templates
         pager_links: SonataAdminBundle:Pager:links.html.twig
         pager_results: SonataAdminBundle:Pager:results.html.twig
+
+        dashboard: BackendBundle:Default:dashboard.html.twig
 
     dashboard:
         blocks:

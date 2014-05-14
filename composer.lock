@@ -3,8 +3,75 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "05585192ce94ca39078471ba65857e6a",
+    "hash": "70cf2c8f63a3999fade879a56ac22b99",
     "packages": [
+        {
+            "name": "brown298/data-tables-bundle",
+            "version": "dev-master",
+            "target-dir": "Brown298/DataTablesBundle",
+            "source": {
+                "type": "git",
+                "url": "https://bitbucket.org/brown298/datatablesbundle.git",
+                "reference": "726ffa24273c27230defadcf24fe426fbd53cd43"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/brown298/datatablesbundle/get/726ffa24273c27230defadcf24fe426fbd53cd43.zip",
+                "reference": "726ffa24273c27230defadcf24fe426fbd53cd43",
+                "shasum": ""
+            },
+            "require": {
+                "datatables/datatables": "dev-master#36f2c2a7d6042ae003171deaacec9e6dc8c7fe1b",
+                "doctrine/orm": "~2.2,>=2.2.3",
+                "php": ">=5.3.3",
+                "symfony/symfony": ">=2.2.0",
+                "twig/twig": "1.14.*@dev"
+            },
+            "require-dev": {
+                "phake/phake": "2.0.*@dev",
+                "phpunit/phpunit": "~3.7"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Brown298\\DataTablesBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0+"
+            ],
+            "description": "Adds DataTables functionality to Symfony2",
+            "homepage": "http://code.rbsolutions.us/datatables/",
+            "keywords": [
+                "Symfony2",
+                "datatables"
+            ],
+            "time": "2014-03-03 20:36:06"
+        },
+        {
+            "name": "datatables/datatables",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DataTables/DataTables.git",
+                "reference": "77343b72cb035e1ceba387335136f010282c0940"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DataTables/DataTables/zipball/77343b72cb035e1ceba387335136f010282c0940",
+                "reference": "77343b72cb035e1ceba387335136f010282c0940",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, which will add advanced interaction controls to any HTML table.",
+            "homepage": "http://www.datatables.net/",
+            "time": "2014-05-06 14:25:26"
+        },
         {
             "name": "doctrine/annotations",
             "version": "v1.1.2",
@@ -1767,12 +1834,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "d89d9dc1447f2e0eaac14e89558a4738385c4099"
+                "reference": "26ecdeedf85d370408564f2c48cd3bb428030aed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/d89d9dc1447f2e0eaac14e89558a4738385c4099",
-                "reference": "d89d9dc1447f2e0eaac14e89558a4738385c4099",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/26ecdeedf85d370408564f2c48cd3bb428030aed",
+                "reference": "26ecdeedf85d370408564f2c48cd3bb428030aed",
                 "shasum": ""
             },
             "require": {
@@ -1838,7 +1905,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2014-05-07 08:41:34"
+            "time": "2014-05-13 12:38:31"
         },
         {
             "name": "sonata-project/block-bundle",
@@ -1906,22 +1973,22 @@
         },
         {
             "name": "sonata-project/cache",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/cache.git",
-                "reference": "3bd8c266c6184ebcf82846d659292e9680b979eb"
+                "reference": "7c91e7fd1ca5be4273b09388650709bff31d8966"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/cache/zipball/3bd8c266c6184ebcf82846d659292e9680b979eb",
-                "reference": "3bd8c266c6184ebcf82846d659292e9680b979eb",
+                "url": "https://api.github.com/repos/sonata-project/cache/zipball/7c91e7fd1ca5be4273b09388650709bff31d8966",
+                "reference": "7c91e7fd1ca5be4273b09388650709bff31d8966",
                 "shasum": ""
             },
             "require-dev": {
                 "doctrine/orm": "~2.2",
                 "doctrine/phpcr-odm": "~1.0",
-                "predis/predis": "~0.8",
+                "predis/predis": "~0.8,<1.0",
                 "psr/log": "~1.0"
             },
             "suggest": {
@@ -1962,7 +2029,7 @@
                 "mongodb",
                 "redis"
             ],
-            "time": "2014-02-13 15:12:33"
+            "time": "2014-05-12 08:55:48"
         },
         {
             "name": "sonata-project/core-bundle",
@@ -2126,12 +2193,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataDoctrineORMAdminBundle.git",
-                "reference": "f35952c3e58e6cb50e2a773c3681859bf2469a07"
+                "reference": "79e04f7bdea76a8bdd3253e0645c2dd12276eef4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataDoctrineORMAdminBundle/zipball/f35952c3e58e6cb50e2a773c3681859bf2469a07",
-                "reference": "f35952c3e58e6cb50e2a773c3681859bf2469a07",
+                "url": "https://api.github.com/repos/sonata-project/SonataDoctrineORMAdminBundle/zipball/79e04f7bdea76a8bdd3253e0645c2dd12276eef4",
+                "reference": "79e04f7bdea76a8bdd3253e0645c2dd12276eef4",
                 "shasum": ""
             },
             "require": {
@@ -2144,9 +2211,11 @@
                 "symfony/framework-bundle": "~2.2",
                 "symfony/security": "~2.3"
             },
+            "provide": {
+                "sonata-project/admin-bundle-persistency-layer": "1.0.0"
+            },
             "require-dev": {
-                "simplethings/entity-audit-bundle": "~0.1",
-                "sonata-project/admin-bundle": "~2.3@dev"
+                "simplethings/entity-audit-bundle": "~0.1"
             },
             "suggest": {
                 "simplethings/entity-audit-bundle": "If you want to support for versioning of entities and their associations."
@@ -2186,7 +2255,7 @@
                 "generator",
                 "sonata"
             ],
-            "time": "2014-04-29 11:25:21"
+            "time": "2014-05-13 14:08:28"
         },
         {
             "name": "sonata-project/easy-extends-bundle",
@@ -2408,12 +2477,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataUserBundle.git",
-                "reference": "086173fd698d6bf2bc85d113f5551871d93d40aa"
+                "reference": "fd2aa9a397872424a0084b12769336f9f066bd36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataUserBundle/zipball/086173fd698d6bf2bc85d113f5551871d93d40aa",
-                "reference": "086173fd698d6bf2bc85d113f5551871d93d40aa",
+                "url": "https://api.github.com/repos/sonata-project/SonataUserBundle/zipball/fd2aa9a397872424a0084b12769336f9f066bd36",
+                "reference": "fd2aa9a397872424a0084b12769336f9f066bd36",
                 "shasum": ""
             },
             "require": {
@@ -2472,7 +2541,7 @@
                 "sonata",
                 "user"
             ],
-            "time": "2014-05-02 13:49:49"
+            "time": "2014-05-12 13:04:48"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2916,16 +2985,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.15.1",
+            "version": "v1.14.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig.git",
-                "reference": "1fb5784662f438d7d96a541e305e28b812e2eeed"
+                "reference": "ca445842fcea4f844d68203ffa2d00f5e3cdea64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/1fb5784662f438d7d96a541e305e28b812e2eeed",
-                "reference": "1fb5784662f438d7d96a541e305e28b812e2eeed",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/ca445842fcea4f844d68203ffa2d00f5e3cdea64",
+                "reference": "ca445842fcea4f844d68203ffa2d00f5e3cdea64",
                 "shasum": ""
             },
             "require": {
@@ -2934,7 +3003,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.14-dev"
                 }
             },
             "autoload": {
@@ -2957,11 +3026,6 @@
                     "name": "Armin Ronacher",
                     "email": "armin.ronacher@active-4.com",
                     "role": "Project Founder"
-                },
-                {
-                    "name": "Twig Team",
-                    "homepage": "https://github.com/fabpot/Twig/graphs/contributors",
-                    "role": "Contributors"
                 }
             ],
             "description": "Twig, the flexible, fast, and secure template language for PHP",
@@ -2969,7 +3033,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2014-02-13 10:19:29"
+            "time": "2013-10-30 08:20:53"
         },
         {
             "name": "willdurand/jsonp-callback-validator",
@@ -3074,7 +3138,9 @@
         "sonata-project/user-bundle": 20,
         "sonata-project/doctrine-orm-admin-bundle": 20,
         "sonata-project/datagrid-bundle": 20,
-        "sonata-project/jquery-bundle": 20
+        "sonata-project/jquery-bundle": 20,
+        "brown298/data-tables-bundle": 20,
+        "datatables/datatables": 20
     },
     "platform": {
         "php": ">=5.3.3"
