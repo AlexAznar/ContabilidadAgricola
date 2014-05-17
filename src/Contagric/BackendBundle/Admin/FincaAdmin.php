@@ -80,24 +80,12 @@ class FincaAdmin extends Admin
             ->add('nombre')
             ->add('descripcion')
             ->add('createdAt', 'doctrine_orm_datetime', array('label' => 'Creado el'), null, array(
-                'widget' => 'single_text',
                 'required' => false,
                 'attr' => array('onclick' => 'becomeDateTimePicker(this)'),
-                'format' => 'yyyy-MM-dd HH:mm',
-                'with_seconds' => false,
-                'empty_value' => array(
-                    'year' => 'Year', 'month' => 'Month', 'day' => 'Day', 'hour' => 'Hour', 'minute' => 'Minute', 'second' => 'Second'
-                )
             ))
             ->add('updatedAt', 'doctrine_orm_datetime', array('label' => 'Actualizado el'), null, array(
-                'widget' => 'single_text',
                 'required' => false,
                 'attr' => array('onclick' => 'becomeDateTimePicker(this)'),
-                'format' => 'yyyy-MM-dd HH:mm',
-                'with_seconds' => false,
-                'empty_value' => array(
-                    'year' => 'Year', 'month' => 'Month', 'day' => 'Day', 'hour' => 'Hour', 'minute' => 'Minute', 'second' => 'Second'
-                )
             ))
         ;
     }

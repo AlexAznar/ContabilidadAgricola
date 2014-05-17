@@ -95,14 +95,8 @@ class RelProductoCampanyaAdmin extends Admin
             ->add('coste')
             ->add('comentario')
             ->add('fecha', 'doctrine_orm_datetime', array('label' => 'fecha'), null, array(
-                'widget' => 'single_text',
                 'required' => false,
                 'attr' => array('onclick' => 'becomeDateTimePicker(this)'),
-                'format' => 'yyyy-MM-dd',
-                'with_seconds' => false,
-                'empty_value' => array(
-                    'year' => 'Year', 'month' => 'Month', 'day' => 'Day'
-                )
             ));
     }
 
