@@ -1834,12 +1834,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "26ecdeedf85d370408564f2c48cd3bb428030aed"
+                "reference": "08fa425f7ac8ee2737f5e8a2dfffd16ae2cd63bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/26ecdeedf85d370408564f2c48cd3bb428030aed",
-                "reference": "26ecdeedf85d370408564f2c48cd3bb428030aed",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/08fa425f7ac8ee2737f5e8a2dfffd16ae2cd63bb",
+                "reference": "08fa425f7ac8ee2737f5e8a2dfffd16ae2cd63bb",
                 "shasum": ""
             },
             "require": {
@@ -1905,7 +1905,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2014-05-13 12:38:31"
+            "time": "2014-05-14 20:08:06"
         },
         {
             "name": "sonata-project/block-bundle",
@@ -2477,12 +2477,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataUserBundle.git",
-                "reference": "fd2aa9a397872424a0084b12769336f9f066bd36"
+                "reference": "c8ec576e82087a029c4fd0eec2adf9824136dcae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataUserBundle/zipball/fd2aa9a397872424a0084b12769336f9f066bd36",
-                "reference": "fd2aa9a397872424a0084b12769336f9f066bd36",
+                "url": "https://api.github.com/repos/sonata-project/SonataUserBundle/zipball/c8ec576e82087a029c4fd0eec2adf9824136dcae",
+                "reference": "c8ec576e82087a029c4fd0eec2adf9824136dcae",
                 "shasum": ""
             },
             "require": {
@@ -2541,7 +2541,7 @@
                 "sonata",
                 "user"
             ],
-            "time": "2014-05-12 13:04:48"
+            "time": "2014-05-14 16:59:44"
         },
         {
             "name": "swiftmailer/swiftmailer",
