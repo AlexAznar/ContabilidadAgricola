@@ -1,12 +1,10 @@
+role :app, %w{u77251536@contagric.com}
+role :web, %w{u77251536@contagric.com}
+role :db, %w{u77251536@contagric.com}
 
 
-role :app, %w{deploy@example.com}
-role :web, %w{deploy@example.com}
-role :db,  %w{deploy@example.com}
+server 'contagric.com', user: 'u77251536', roles: %w{web app db}
 
-
-server 'contagric.com', user: 'u77251536', roles: %w{web app}
-set :branch, 'master'
 # Custom SSH Options
 # ==================
 # You may pass any option but keep in mind that net/ssh understands a
