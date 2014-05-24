@@ -3,8 +3,54 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "05585192ce94ca39078471ba65857e6a",
+    "hash": "f14f727ffdc9f2c36cc7d0fd8db98c42",
     "packages": [
+        {
+            "name": "ali/datatable",
+            "version": "dev-master",
+            "target-dir": "Ali/DatatableBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AliHichem/AliDatatableBundle.git",
+                "reference": "ece84d9d96c6d2d3ea4888e849f0312b2bdcdc06"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AliHichem/AliDatatableBundle/zipball/ece84d9d96c6d2d3ea4888e849f0312b2bdcdc06",
+                "reference": "ece84d9d96c6d2d3ea4888e849f0312b2bdcdc06",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/common": ">=2.1,<2.4.x-dev",
+                "php": ">=5.3.0",
+                "twig/twig": ">=1.8,<2.0-dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Ali\\DatatableBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ali hichem",
+                    "email": "ali.hichem@mail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Symfony2 Ajax Datagrid Bundle for doctrine2 entities",
+            "homepage": "https://github.com/AliHichem/AliDatatableBundle",
+            "keywords": [
+                "Symfony2",
+                "datatable",
+                "jquery"
+            ],
+            "time": "2014-04-10 11:28:32"
+        },
         {
             "name": "doctrine/annotations",
             "version": "v1.1.2",
@@ -2029,12 +2075,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataDatagridBundle.git",
-                "reference": "ecdc96a1688e14af5636d29d19d4ca3a3eb862b9"
+                "reference": "dba166c6c52591f1bfafa8514b848a3bae23a557"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataDatagridBundle/zipball/ecdc96a1688e14af5636d29d19d4ca3a3eb862b9",
-                "reference": "ecdc96a1688e14af5636d29d19d4ca3a3eb862b9",
+                "url": "https://api.github.com/repos/sonata-project/SonataDatagridBundle/zipball/dba166c6c52591f1bfafa8514b848a3bae23a557",
+                "reference": "dba166c6c52591f1bfafa8514b848a3bae23a557",
                 "shasum": ""
             },
             "require-dev": {
@@ -2072,7 +2118,7 @@
                 "datagrid",
                 "sonata"
             ],
-            "time": "2014-05-15 16:06:18"
+            "time": "2014-05-19 14:33:23"
         },
         {
             "name": "sonata-project/doctrine-extensions",
@@ -3079,7 +3125,8 @@
         "sonata-project/user-bundle": 20,
         "sonata-project/doctrine-orm-admin-bundle": 20,
         "sonata-project/datagrid-bundle": 20,
-        "sonata-project/jquery-bundle": 20
+        "sonata-project/jquery-bundle": 20,
+        "ali/datatable": 20
     },
     "platform": {
         "php": ">=5.3.3"
