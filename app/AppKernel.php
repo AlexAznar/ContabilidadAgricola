@@ -27,6 +27,7 @@ class AppKernel extends Kernel
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
             new Contagric\BackendBundle\BackendBundle(),
+            new Stnw\DatePickerBundle\StnwDatePickerBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

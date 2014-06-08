@@ -30,7 +30,7 @@ class Trabajador
     /**
      * @var string
      *
-     * @ORM\Column(name="descripcion", type="text")
+     * @ORM\Column(name="descripcion", type="text", nullable = true)
      */
     protected $descripcion;
 

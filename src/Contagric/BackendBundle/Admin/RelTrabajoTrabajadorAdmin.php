@@ -60,7 +60,7 @@ class RelTrabajoTrabajadorAdmin extends Admin
                     ->add('horas','number', array('required' => true, 'precision' => '2'))
                     ->add('coste', 'money', array('required' => true, 'precision' => '2'))
                     ->add('comentario', 'textarea', array('required' => false))
-                    ->add('fecha', 'datetime', array('format' => 'Y-m-d'))
+                    ->add('fecha', 'datePicker')
                 ->end()
             ;
         }
@@ -101,10 +101,7 @@ class RelTrabajoTrabajadorAdmin extends Admin
             ->add('horas')
             ->add('coste')
             ->add('comentario')
-            ->add('fecha', 'doctrine_orm_datetime', array('label' => 'fecha'), null, array(
-                'required' => false,
-                'attr' => array('onclick' => 'becomeDateTimePicker(this)'),
-            ));
+            ->add('fecha', 'stnw_date_filter');
     }
 
 }

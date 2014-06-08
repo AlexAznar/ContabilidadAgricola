@@ -49,7 +49,7 @@ class RelGeneroCampanya
     /**
      * @var datetime
      *
-     * @ORM\Column(name="fecha", type="datetime")
+     * @ORM\Column(name="fecha", type="date")
      */
     protected $fecha;
 
