@@ -27,33 +27,38 @@ security:
     # set access_strategy to unanimous, else you may have unexpected behaviors
     access_decision_manager:
         strategy: unanimous
- 
- 
- 
+
     firewalls:
         # -> custom firewall for the admin area of the URL
         admin:
             pattern:     /admin(.*)
+            context:     user
             form_login:
                 provider:      fos_userbundle
                 login_path:    /admin/login
                 use_forward:   false
                 check_path:    /admin/login_check
                 failure_path:  null
+                default_target_path: /admin/dashboard
+                always_use_default_target_path: true
             logout:
                 path:          /admin/logout
+                target: /admin/login
             anonymous:   true
         # -> end custom configuration
  
         # defaut login area for standard users
         main:
             pattern:     .*
+            context: user
             form_login:
                 provider:      fos_userbundle
-                login_path:    /login
+                login_path:    /admin/login
                 use_forward:   false
                 check_path:    /login_check
                 failure_path:  null
+                default_target_path: /admin/dashboard
+                always_use_default_target_path: true
             logout:      true
             anonymous:   true
  
