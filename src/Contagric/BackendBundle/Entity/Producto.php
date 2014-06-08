@@ -34,6 +34,11 @@ class Producto
      */
     protected $descripcion;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="TipoProducto", inversedBy="producto")
+     */
+    protected $tipoProducto;
+
       /**
      * @ORM\OneToMany(targetEntity="RelProductoCampanya", mappedBy="producto")
      */
@@ -56,7 +61,7 @@ class Producto
 
     public function __toString()
     {
-        return $this->getNombre() ?: '';
+        return $this->getNombre() ? $this->getNombre() : '';
     }
 
     public function __construct()
@@ -99,6 +104,29 @@ class Producto
     {
         return $this->nombre;
     }
+
+    /**
+     * Set tipoProducto
+     *
+     * @param \Contagric\BackendBundle\Entity\TipoProducto $tipoProducto
+     * @return Producto
+     */
+    public function setTipoProducto(\Contagric\BackendBundle\Entity\TipoProducto  $tipoProducto)
+    {
+        $this->tipoProducto = $tipoProducto;
+        return $this;
+    }
+
+    /**
+     * Get tipoProducto
+     *
+     * @return \Contagric\BackendBundle\Entity\TipoProducto 
+     */
+    public function getTipoProducto()
+    {
+        return $this->tipoProducto;
+    }
+
 
     /**
      * Set descripcion

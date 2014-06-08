@@ -11,9 +11,9 @@ use Sonata\AdminBundle\Route\RouteCollection;
 
 use Knp\Menu\ItemInterface as MenuItemInterface;
 
-use Contagric\BackendBundle\Entity\Producto;
+use Contagric\BackendBundle\Entity\TipoProducto;
 
-class ProductoAdmin extends Admin
+class TipoProductoAdmin extends Admin
 {
     /**
      * @param \Sonata\AdminBundle\Show\ShowMapper $showMapper
@@ -23,13 +23,9 @@ class ProductoAdmin extends Admin
     protected function configureShowField(ShowMapper $showMapper)
     {
         $showMapper
-            ->with('Producto')
+            ->with('TipoProducto')
                 ->add('id')
                 ->add('nombre')
-                ->add('descripcion')
-                ->add('tipoProducto')
-                ->add('createdAt')
-                ->add('updatedAt')
             ->end();
     }
 
@@ -41,10 +37,8 @@ class ProductoAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->with('Producto')
+            ->with('TipoProducto')
                 ->add('nombre', 'text', array())
-                ->add('tipoProducto', 'entity', array('class' => 'Contagric\BackendBundle\Entity\TipoProducto'))
-                ->add('descripcion', 'textarea', array('required' => false))
             ->end();
     }
 
@@ -58,10 +52,6 @@ class ProductoAdmin extends Admin
         $listMapper
             ->addIdentifier('id')
             ->add('nombre')
-            ->add('descripcion')
-            ->add('tipoProducto.nombre', null, array('label' => 'Tipo'))
-            ->add('createdAt', 'datetime', array('format' => 'Y-m-d H:i:s'))
-            ->add('updatedAt', 'datetime', array('format' => 'Y-m-d H:i:s'))
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'edit' => array(),
@@ -80,18 +70,6 @@ class ProductoAdmin extends Admin
     {
         $datagridMapper
             ->add('nombre')
-            ->add('descripcion')
-            ->add('tipoProducto')
-            ->add('createdAt', 'doctrine_orm_datetime', array('label' => 'Creado el'), null, array(
-                'required' => false,
-                'attr' => array('onclick' => 'becomeDateTimePicker(this)'),
-            ))
-            ->add('updatedAt', 'doctrine_orm_datetime', array('label' => 'Actualizado el'), null, array(
-                'required' => false,
-                'attr' => array('onclick' => 'becomeDateTimePicker(this)'),
-            ))
         ;
     }
-
 }
-?>

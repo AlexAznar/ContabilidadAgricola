@@ -47,33 +47,33 @@ services:
             - { name: sonata.admin, manager_type: orm, group: "Inventario Agricola", label: "Productos" }
         arguments: [null, Contagric\BackendBundle\Entity\Producto, BackendBundle:ProductoAdmin]
 
+    contagric.backend.admin.tipoProducto:
+        class: Contagric\BackendBundle\Admin\TipoProductoAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Inventario Agricola", label: "Tipo de Productos" }
+        arguments: [null, Contagric\BackendBundle\Entity\TipoProducto, BackendBundle:TipoProductoAdmin]
+
     contagric.backend.admin.ingreso:
         class: Contagric\BackendBundle\Admin\IngresoAdmin
         tags:
             - { name: sonata.admin, manager_type: orm, group: "Contabilidad Agricola", label: "Ingresos", show_in_dashboard: false }
         arguments: [null, Contagric\BackendBundle\Entity\Ingreso, BackendBundle:IngresoAdmin]
 
-
     contagric.backend.admin.relProductoCampanya:
         class: Contagric\BackendBundle\Admin\RelProductoCampanyaAdmin
         tags:
             - { name: sonata.admin, manager_type: orm, group: "Contabilidad Agricola", label: "Gasto en productos", show_in_dashboard: false }
         arguments: [null, Contagric\BackendBundle\Entity\RelProductoCampanya, null]
-        calls:
-            - [ setLabelTranslatorStrategy, [ @sonata.admin.label.strategy.underscore ] ]
 
     contagric.backend.admin.relGeneroCampanya:
         class: Contagric\BackendBundle\Admin\RelGeneroCampanyaAdmin
         tags:
             - { name: sonata.admin, manager_type: orm, group: "Contabilidad Agricola", label: "Genero Producido", show_in_dashboard: false }
         arguments: [null, Contagric\BackendBundle\Entity\RelGeneroCampanya, null]
-        calls:
-            - [ setLabelTranslatorStrategy, [ @sonata.admin.label.strategy.underscore ] ]
 
     contagric.backend.admin.relTrabajoTrabajador:
         class: Contagric\BackendBundle\Admin\RelTrabajoTrabajadorAdmin
         tags:
             - { name: sonata.admin, manager_type: orm, group: "Contabilidad Agricola", label: "Gasto Trabajador", show_in_dashboard: false }
         arguments: [null, Contagric\BackendBundle\Entity\RelTrabajoTrabajador, null]
-        calls:
-            - [ setLabelTranslatorStrategy, [ @sonata.admin.label.strategy.underscore ] ]
+
