@@ -30,8 +30,8 @@ class RelTrabajoTrabajadorAdmin extends Admin
     {
         $showMapper
             ->with('Genero Producido')
-                ->add('trabajo')
                 ->add('trabajador')
+                ->add('trabajo')
                 ->add('campanya')
                 ->add('horas')
                 ->add('coste')
@@ -55,8 +55,8 @@ class RelTrabajoTrabajadorAdmin extends Admin
         {
             $formMapper
                 ->with('Genero Producido')
-                    ->add('trabajo', 'sonata_type_model_list')
                     ->add('trabajador', 'sonata_type_model_list')
+                    ->add('trabajo', 'sonata_type_model_list')
                     ->add('horas','number', array('required' => true, 'precision' => '2'))
                     ->add('coste', 'money', array('required' => true, 'precision' => '2'))
                     ->add('comentario', 'textarea', array('required' => false))
@@ -74,7 +74,8 @@ class RelTrabajoTrabajadorAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('trabajo','trabajador')
+            ->addIdentifier('trabajador','trabajo')
+            ->add('trabajo')
             ->add('horas')
             ->add('coste')
             ->add('comentario')
@@ -96,8 +97,8 @@ class RelTrabajoTrabajadorAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('trabajo.nombre', 'doctrine_orm_string', array())
             ->add('trabajador.nombre', 'doctrine_orm_string', array())
+            ->add('trabajo.nombre', 'doctrine_orm_string', array())
             ->add('horas')
             ->add('coste')
             ->add('comentario')
