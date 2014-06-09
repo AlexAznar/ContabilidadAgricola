@@ -29,7 +29,7 @@ class RelProductoCampanyaAdmin extends Admin
     protected function configureShowField(ShowMapper $showMapper)
     {
         $showMapper
-            ->with('Gasto Producto')
+            ->with('Coste Producto')
                 ->add('producto')
                 ->add('campanya')
                 ->add('coste')
@@ -52,7 +52,7 @@ class RelProductoCampanyaAdmin extends Admin
         else
         {
             $formMapper
-                ->with('Gasto Producto')
+                ->with('Coste Producto')
                     ->add('producto', 'sonata_type_model_list')
                     ->add('coste', 'money',  array('required' => true, 'precision' => '2'))
                     ->add('comentario', 'textarea', array('required' => false))

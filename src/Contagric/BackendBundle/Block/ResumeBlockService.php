@@ -59,7 +59,8 @@ class ResumeBlockService extends BaseBlockService
 
         foreach($campaigns as $campaign)
         {
-            $campaignsCollection[] = array('nombre' => $campaign->getNombre(),
+            $campaignsCollection[] = array('id' => $campaign->getId(),
+                                           'nombre' => $campaign->getNombre(),
                                            'trabajadores' => $this->getCosteTrabajadores($campaign),
                                            'materiales' => $this->getCosteMateriales($campaign),
                                            'genero' => $this->getGeneroProducido($campaign),

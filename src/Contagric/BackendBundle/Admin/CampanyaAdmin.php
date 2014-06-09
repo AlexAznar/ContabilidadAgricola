@@ -32,12 +32,12 @@ class CampanyaAdmin extends Admin
         );
         
         $menu->addChild(
-            'Gastos Productos',
+            'Coste Productos',
             array('uri' => $admin->generateUrl('contagric.backend.admin.relproductocampanya.list', array('id' => $id)))
         );
 
         $menu->addChild(
-            'Gastos Trabajadores',
+            'Coste Trabajadores',
             array('uri' => $admin->generateUrl('contagric.backend.admin.reltrabajotrabajador.list', array('id' => $id)))
         );
 
@@ -111,10 +111,10 @@ class CampanyaAdmin extends Admin
                 'actions' => array(
                     'edit' => array(),
                     'delete' => array(),
-                    'gasto_productos' => array(
+                    'coste_productos' => array(
                         'template' => 'BackendBundle:CampanyaAdmin:list__action_producto_list.html.twig'
                     ),
-                    'gasto_trabajadores' => array(
+                    'coste_trabajadores' => array(
                         'template' => 'BackendBundle:CampanyaAdmin:list__action_trabajador_list.html.twig'
                     ),
                     'genero_producido' => array(

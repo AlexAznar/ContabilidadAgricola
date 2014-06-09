@@ -29,7 +29,7 @@ class RelTrabajoTrabajadorAdmin extends Admin
     protected function configureShowField(ShowMapper $showMapper)
     {
         $showMapper
-            ->with('Genero Producido')
+            ->with('Coste Trabajadores')
                 ->add('trabajador')
                 ->add('trabajo')
                 ->add('campanya')
@@ -54,7 +54,7 @@ class RelTrabajoTrabajadorAdmin extends Admin
         else
         {
             $formMapper
-                ->with('Genero Producido')
+                ->with('Coste Trabajadores')
                     ->add('trabajador', 'sonata_type_model_list')
                     ->add('trabajo', 'sonata_type_model_list')
                     ->add('horas','number', array('required' => true, 'precision' => '2'))
