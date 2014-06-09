@@ -3,7 +3,15 @@ services:
         id: contagric.block.stats
         class:  Contagric\BackendBundle\Block\StatsBlockService
         arguments:
-            - "acme_main.block.rss"
+            - "contagric.block.stats"
+            - "@templating"
+        tags:
+            - {name: "sonata.block"}
+    contagric.block.resume:
+        id: contagric.block.resume
+        class:  Contagric\BackendBundle\Block\ResumeBlockService
+        arguments:
+            - "contagric.block.resume"
             - "@templating"
         tags:
             - {name: "sonata.block"}
