@@ -68,6 +68,7 @@ class CampanyaAdmin extends Admin
                     'class' => 'Contagric\BackendBundle\Entity\Finca',
                     'label' => 'Finca'
                 ))
+                ->add('activa')
                 ->add('createdAt')
                 ->add('updatedAt')
             ->end();
@@ -88,6 +89,7 @@ class CampanyaAdmin extends Admin
                     'class' => 'Contagric\BackendBundle\Entity\Finca',
                     'label' => 'Finca'
                 ))
+                ->add('activa')
             ->end();
     }
 
@@ -103,6 +105,7 @@ class CampanyaAdmin extends Admin
             ->add('nombre')
             ->add('comentario')
             ->add('finca.nombre', 'entity', array('label' => 'Finca'))
+            ->add('activa', 'boolean')
             ->add('updatedAt', 'datetime', array('format' => 'Y-m-d H:i:s'))
             ->add('_action', 'actions', array(
                 'actions' => array(
@@ -136,6 +139,7 @@ class CampanyaAdmin extends Admin
             ->add('nombre')
             ->add('comentario')
             ->add('finca')
+            ->add('activa')
             ->add('createdAt', 'doctrine_orm_datetime', array('label' => 'Creado el'), null, array(
                 'required' => false,
                 'attr' => array('onclick' => 'becomeDateTimePicker(this)')

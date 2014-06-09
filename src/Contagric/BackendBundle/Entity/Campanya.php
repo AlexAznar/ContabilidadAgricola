@@ -46,6 +46,13 @@ class Campanya
     protected $ingreso;
 
     /**
+     * @var activa
+     *
+     * @ORM\Column(name="activa", type="boolean")
+     */
+    protected $activa;
+
+    /**
      * @var datetime
      *
      * @ORM\Column(name="created_at", type="datetime")
@@ -193,6 +200,30 @@ class Campanya
     {
         return $this->ingreso;
     }
+
+    /**
+     * Set activa
+     *
+     * @param boolean $activa
+     * @return Campanya
+     */
+    public function setActiva($activa)
+    {
+        $this->activa = $activa;
+    
+        return $activa;
+    }
+
+    /**
+     * Get activa
+     *
+     * @return boolean
+     */
+    public function getActiva()
+    {
+        return $this->activa;
+    }
+
 
     /**
      * Set createdAt

@@ -13,5 +13,6 @@ services:
         arguments:
             - "contagric.block.resume"
             - "@templating"
+            - "@doctrine.orm.entity_manager"
         tags:
             - {name: "sonata.block"}

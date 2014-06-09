@@ -8,91 +8,102 @@
                 <div class="box-body">
                     <table class="table table-hover">
                         <tbody>
+                            {% for campanya in campanyas %}
                             <tr>
-                            <td >
-                            <section class="content">
-
-                            <!-- Small boxes (Stat box) -->
-                            <div class="row">
-                                <div class="col-lg-3 col-xs-6">
-                                    <!-- small box -->
-                                    <div class="small-box bg-aqua">
-                                        <div class="inner">
-                                            <h3>
-                                                150 €
-                                            </h3>
-                                            <p>
-                                                Coste Trabajadores
-                                            </p>
+                                <td class="box-title"> 
+                                    {{ campanya.nombre }}
+                                </td>
+                            </tr>
+                            <tr>
+                            <td>
+                                <section class="content">
+                                <!-- Small boxes (Stat box) -->
+                                <div class="row">
+                                    <div class="col-lg-3 col-xs-6">
+                                        <!-- small box -->
+                                        <div class="small-box bg-aqua">
+                                            <div class="inner">
+                                                <h3>
+                                                    {{ campanya.trabajadores }} €
+                                                </h3>
+                                                <p>
+                                                    Coste Trabajadores
+                                                </p>
+                                            </div>
+                                            <div class="icon">
+                                                <i class="ion ion-clipboard"></i>
+                                            </div>
+                                            <a href="#" class="small-box-footer">
+                                                Detalle <i class="fa fa-arrow-circle-right"></i>
+                                            </a>
                                         </div>
-                                        <div class="icon">
-                                            <i class="ion ion-clipboard"></i>
+                                    </div><!-- ./col -->
+                                    <div class="col-lg-3 col-xs-6">
+                                        <!-- small box -->
+                                        <div class="small-box bg-green">
+                                            <div class="inner">
+                                                <h3>
+                                                    {{ campanya.materiales }} €
+                                                </h3>
+                                                <p>
+                                                    Coste Materiales
+                                                </p>
+                                            </div>
+                                            <div class="icon">
+                                                <i class="ion ion-beaker"></i>
+                                            </div>
+                                            <a href="#" class="small-box-footer">
+                                                Detalle <i class="fa fa-arrow-circle-right"></i>
+                                            </a>
                                         </div>
-                                        <a href="#" class="small-box-footer">
-                                            Detalle <i class="fa fa-arrow-circle-right"></i>
-                                        </a>
-                                    </div>
-                                </div><!-- ./col -->
-                                <div class="col-lg-3 col-xs-6">
-                                    <!-- small box -->
-                                    <div class="small-box bg-green">
-                                        <div class="inner">
-                                            <h3>
-                                                53 €
-                                            </h3>
-                                            <p>
-                                                Coste Materiales
-                                            </p>
+                                    </div><!-- ./col -->
+                                    <div class="col-lg-3 col-xs-6">
+                                        <!-- small box -->
+                                        <div class="small-box bg-red">
+                                            <div class="inner">
+                                                <h3>
+                                                    {{ campanya.genero }} <sup style="font-size: 20px">Kg</sup>
+                                                </h3>
+                                                <p>
+                                                    Kilos Cosecha
+                                                </p>
+                                            </div>
+                                            <div class="icon">
+                                                <i class="ion ion-leaf"></i>
+                                            </div>
+                                            <a href="#" class="small-box-footer">
+                                                Detalle <i class="fa fa-arrow-circle-right"></i>
+                                            </a>
                                         </div>
-                                        <div class="icon">
-                                            <i class="ion ion-beaker"></i>
+                                    </div><!-- ./col -->
+                                    <div class="col-lg-3 col-xs-6">
+                                        <!-- small box -->
+                                        <div class="small-box bg-yellow">
+                                            <div class="inner">
+                                                <h3>
+                                                    {{ campanya.ingresos }} €
+                                                </h3>
+                                                <p>
+                                                    Ingresos
+                                                </p>
+                                            </div>
+                                            <div class="icon">
+                                                <i class="ion ion-stats-bars"></i>
+                                            </div>
+                                            <a href="#" class="small-box-footer">
+                                                Detalle <i class="fa fa-arrow-circle-right"></i>
+                                            </a>
                                         </div>
-                                        <a href="#" class="small-box-footer">
-                                            Detalle <i class="fa fa-arrow-circle-right"></i>
-                                        </a>
-                                    </div>
-                                </div><!-- ./col -->
-                                <div class="col-lg-3 col-xs-6">
-                                    <!-- small box -->
-                                    <div class="small-box bg-red">
-                                        <div class="inner">
-                                            <h3>
-                                                5.000 <sup style="font-size: 20px">Kg</sup>
-                                            </h3>
-                                            <p>
-                                                Kilos Cosecha
-                                            </p>
-                                        </div>
-                                        <div class="icon">
-                                            <i class="ion ion-leaf"></i>
-                                        </div>
-                                        <a href="#" class="small-box-footer">
-                                            Detalle <i class="fa fa-arrow-circle-right"></i>
-                                        </a>
-                                    </div>
-                                </div><!-- ./col -->
-                                <div class="col-lg-3 col-xs-6">
-                                    <!-- small box -->
-                                    <div class="small-box bg-yellow">
-                                        <div class="inner">
-                                            <h3>
-                                                65 €
-                                            </h3>
-                                            <p>
-                                                Ingresos
-                                            </p>
-                                        </div>
-                                        <div class="icon">
-                                            <i class="ion ion-stats-bars"></i>
-                                        </div>
-                                        <a href="#" class="small-box-footer">
-                                            Detalle <i class="fa fa-arrow-circle-right"></i>
-                                        </a>
-                                    </div>
-                                </div><!-- ./col -->
-                            </div><!-- /.row -->
+                                    </div><!-- ./col -->
+                                </div><!-- /.row -->
                             </td>
                           </tr>
+                          <tr>
+                            <td class="sonata-ba-list-label">
+                                Profit Total = {{ (campanya.ingresos - (campanya.trabajadores + campanya.materiales)) }} €
+                            </td>
+                          </tr>
+                       {% endfor %}
                        </tbody>
                     </table>
                 </div>
