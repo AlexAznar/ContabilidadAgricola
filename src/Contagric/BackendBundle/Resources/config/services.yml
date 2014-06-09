@@ -1,0 +1,9 @@
+services:
+    contagric.block.stats:
+        id: contagric.block.stats
+        class:  Contagric\BackendBundle\Block\StatsBlockService
+        arguments:
+            - "acme_main.block.rss"
+            - "@templating"
+        tags:
+            - {name: "sonata.block"}

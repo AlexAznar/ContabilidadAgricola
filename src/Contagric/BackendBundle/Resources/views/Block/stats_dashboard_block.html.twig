@@ -1,7 +1,7 @@
 {% extends sonata_block.templates.block_base %}
 
 {% block block %}
-            <div class="box">
+  <div class="box">
                 <div class="box-header">
                     <h3 class="box-title">{{ settings.title }}</h3>
                 </div>
@@ -10,14 +10,12 @@
                         <tbody>
                           <tr>
                             <td class="sonata-ba-list-label" width="40%">
-                                Consultas
+                                Panel de consultas
                             </td>
                             <td>
                               <div class="btn-group">
-                                <a class="btn btn-link btn-flat" href="/app_dev.php/admin/contagric/backend/campanya/create">
-                                   <i class="fa fa-plus-circle"></i>link_add</a>
-                                <a class="btn btn-link btn-flat" href="/app_dev.php/admin/contagric/backend/campanya/list">
-                                   <i class="glyphicon glyphicon-list"></i>link_list</a>
+                                <a class="btn btn-link btn-flat" href="/{{ app.environment == 'dev' ? "app_dev.php" : "app.php" }}/stats">
+                                   <i class="glyphicon glyphicon-stats"></i>  Graficos</a>
                               </div>
                             </td>
                           </tr>

@@ -92,7 +92,8 @@ sonata_block:
         sonata.block.service.text: ~
         sonata.block.service.action: ~
         sonata.block.service.menu: ~
-         
+        contagric.block.stats:
+
 sonata_admin:
     title:     Contagric Panel
     title_logo: /bundles/sonataadmin/logo_title.png
@@ -129,6 +130,8 @@ sonata_admin:
 
     dashboard:
         blocks:
+            - { position: left, type: contagric.block.stats }
             - { position: left, type: sonata.admin.block.admin_list }
+
 
 
