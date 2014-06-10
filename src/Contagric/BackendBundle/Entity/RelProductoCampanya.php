@@ -42,7 +42,7 @@ class RelProductoCampanya
     /**
      * @var string
      *
-     * @ORM\Column(name="comentario", type="text")
+     * @ORM\Column(name="comentario", type="text", nullable=true)
      */
     protected $comentario;
 
