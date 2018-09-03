@@ -10,12 +10,6 @@ services:
             - [ addChild, [@contagric.backend.admin.ingreso]]
             - [ addChild, [@contagric.backend.admin.relTrabajoTrabajador]]
 
-    sonata.block.service.stats:
-        class: Contagric\BackendBundle\Block\StatsBlockService
-        tags:
-            - { name: sonata.block }
-        arguments: ["sonata.block.service.stats", @templating ]
-
 
     contagric.backend.admin.finca:
         class: Contagric\BackendBundle\Admin\FincaAdmin
