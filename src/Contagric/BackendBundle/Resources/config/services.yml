@@ -1,12 +1,4 @@
 services:
-    contagric.block.stats:
-        id: contagric.block.stats
-        class:  Contagric\BackendBundle\Block\StatsBlockService
-        arguments:
-            - "contagric.block.stats"
-            - "@templating"
-        tags:
-            - {name: "sonata.block"}
     contagric.block.resume:
         id: contagric.block.resume
         class:  Contagric\BackendBundle\Block\ResumeBlockService
