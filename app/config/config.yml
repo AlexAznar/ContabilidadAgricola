@@ -130,7 +130,6 @@ sonata_admin:
 
     dashboard:
         blocks:
-            - { position: left, type: contagric.block.stats }
             - { position: left, type: sonata.admin.block.admin_list }
             - { position: right, type: contagric.block.resume }
 
